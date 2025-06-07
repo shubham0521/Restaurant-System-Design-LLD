@@ -1,9 +1,8 @@
 package com.systemdesign.restaurants.service.impl;
 
 import com.systemdesign.restaurants.entity.Restaurants;
-import com.systemdesign.restaurants.helper.FilteResturantFactory;
+import com.systemdesign.restaurants.helper.FilterRestaurantFactory;
 import com.systemdesign.restaurants.model.request.FilterRestaurantsByPinCodeAndNameRequest;
-import com.systemdesign.restaurants.model.response.FilterMenuByNameResponse;
 import com.systemdesign.restaurants.model.response.FilterRestaurantByPinCodeAndNameResponse;
 import com.systemdesign.restaurants.repo.RestaurantsRepository;
 import org.apache.commons.lang3.StringUtils;
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class FilterRestaurantsByPinCodeAndName extends FilteResturantFactory {
+public class FilterRestaurantsByPinCodeAndName extends FilterRestaurantFactory {
 
     protected FilterRestaurantsByPinCodeAndName(RestaurantsRepository restaurantsRepository) {
         super(restaurantsRepository);

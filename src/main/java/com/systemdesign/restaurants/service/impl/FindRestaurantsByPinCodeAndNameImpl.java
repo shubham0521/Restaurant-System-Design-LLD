@@ -1,16 +1,10 @@
 package com.systemdesign.restaurants.service.impl;
 
-import ch.qos.logback.core.util.StringUtil;
-import com.systemdesign.restaurants.entity.Restaurants;
-import com.systemdesign.restaurants.helper.FilteResturantFactory;
+import com.systemdesign.restaurants.helper.FilterRestaurantFactory;
 import com.systemdesign.restaurants.model.request.FilterRestaurantsByPinCodeAndNameRequest;
 import com.systemdesign.restaurants.model.response.FilterRestaurantByPinCodeAndNameResponse;
-import com.systemdesign.restaurants.repo.RestaurantsRepository;
 import com.systemdesign.restaurants.service.FindRestaurantsByPinCodeAndName;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,9 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 public class FindRestaurantsByPinCodeAndNameImpl implements FindRestaurantsByPinCodeAndName {
 
-    private final List<FilteResturantFactory> filteResturantFactoryList;
+    private final List<FilterRestaurantFactory> filteResturantFactoryList;
 
-    private FilteResturantFactory getFactoryClass(FilterRestaurantsByPinCodeAndNameRequest input) {
+    private FilterRestaurantFactory getFactoryClass(FilterRestaurantsByPinCodeAndNameRequest input) {
         return filteResturantFactoryList.stream()
                 .filter(value -> value.isFilterValid(input))
                 .findFirst()

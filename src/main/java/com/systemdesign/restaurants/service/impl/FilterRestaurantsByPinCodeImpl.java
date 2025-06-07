@@ -1,22 +1,20 @@
 package com.systemdesign.restaurants.service.impl;
 
 import com.systemdesign.restaurants.entity.Restaurants;
-import com.systemdesign.restaurants.helper.FilteResturantFactory;
+import com.systemdesign.restaurants.helper.FilterRestaurantFactory;
 import com.systemdesign.restaurants.model.request.FilterRestaurantsByPinCodeAndNameRequest;
-import com.systemdesign.restaurants.model.response.FilterMenuByNameResponse;
 import com.systemdesign.restaurants.model.response.FilterRestaurantByPinCodeAndNameResponse;
 import com.systemdesign.restaurants.repo.RestaurantsRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
 @Component
-public class FilterRestaurantsByPinCodeImpl extends FilteResturantFactory {
+public class FilterRestaurantsByPinCodeImpl extends FilterRestaurantFactory {
 
 
     protected FilterRestaurantsByPinCodeImpl(RestaurantsRepository restaurantsRepository) {
